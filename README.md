@@ -18,9 +18,9 @@
 <br>
 
 ## Sumário:
-- ### [Instruções para rodar](#instruc3a7c3b5es-para-rodar-1)
+- ### [Instruções para rodar](#instruções-para-rodar-1)
 - ### [Prints dos usos](#prints-dos-usos-1)
-- ### [Estruturação do schema.prisma](#estruturac3a7c3a3o-do-schemaprisma-1)
+- ### [Estruturação do schema.prisma](#estruturação-do-schemaprisma-1)
 
 <br>
 
