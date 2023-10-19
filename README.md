@@ -73,7 +73,7 @@ npm run start:dev
 
 ### Endereço:
 
-![GET HTTP REQUEST EM ENDERECO](images/get-ENDERECO.png)
+![GET HTTP REQUEST EM ENDERECO](images/get-endereco.png)
 
 
 <br>
@@ -82,7 +82,7 @@ npm run start:dev
 
 ### Equipamento:
 
-![GET HTTP REQUEST EM EQUIPAMENTO](images/get-EQUIPAMENTO.png)
+![GET HTTP REQUEST EM EQUIPAMENTO](images/get-equipamento.png)
 
 
 <br>
@@ -91,7 +91,7 @@ npm run start:dev
 
 ### Ordem Serviço:
 
-![GET HTTP REQUEST EM ORDEM-SERVICO](images/get-ORDEM-SERVICO.png)
+![GET HTTP REQUEST EM ORDEM-SERVICO](images/get-ordem-servico.png)
 
 
 <br>
@@ -100,7 +100,7 @@ npm run start:dev
 
 ### Serviço:
 
-![GET HTTP REQUEST EM SERVICO](images/get-SERVICO.png)
+![GET HTTP REQUEST EM SERVICO](images/get-servico.png)
 
 <br>
 
