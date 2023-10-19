@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../db.sqlite"
+}
+
+model Cliente{
+  id                    Int   @id @default(autoincrement())
+  nome                  String
+  email                 String  @unique
+  senha                 String
+  cpf                   String
+  dataDeNascimento      String
+  criadoEm              DateTime @default(now())
+  atualizadoEm          DateTime @updatedAt
+  endereco              Endereco? @relation(fields: [enderecoId], references: [id])
+  enderecoId            Int?
+}
+
+model Endereco{
+  id                    Int   @id @default(autoincrement())
+  rua                   String
+  bairro                String
+  complemento           String?
+  numero                String
+  cidade                String
+  estado                String
+  pais                  String
+  cep                   String
+  criadoEm              DateTime @default(now())
+  atualizadoEm          DateTime @updatedAt
+  cliente               Cliente[]
+  empregado             Empregado[]
+}
+
+model Servico{
+  id                    Int   @id @default(autoincrement())
+  nome                  String
+  garantia              String
+  detalhesContrato      String
+  recursos              String
+  termosCondicoes       String
+  objetivo              String
+  requisitosCliente     String
+  dataAgendada          String
+  horaAgendada          String
+  criadoEm              DateTime @default(now())
+  atualizadoEm          DateTime @updatedAt
+}
+
+model Equipamento{
+  id                    Int   @id @default(autoincrement())
+  tipo                  String
+  valor                 Float
+  marca                 String
+  modelo                String
+  numeroSerie           Int
+  criadoEm              DateTime @default(now())
+  atualizadoEm          DateTime @updatedAt
+}
+
+model Empregado{
+  id                    Int   @id @default(autoincrement())
+  nome                  String
+  disponibilidade       String
+  especialidade         String
+  endereco              Endereco? @relation(fields: [enderecoId], references: [id])
+  enderecoId            Int?
+}
+
+model OrdemServico{
+  id                    Int   @id @default(autoincrement())
+  assinaturas           Int
+  descricao             String
+  orcamentos            String
+  condicoes             String
+  observacoesAdicionais String
+  criadoEm              DateTime @default(now())
+  atualizadoEm          DateTime @updatedAt
+}
