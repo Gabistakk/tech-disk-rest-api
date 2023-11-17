@@ -32,7 +32,7 @@ export class OrdemServicoService {
   }
 
   remove(id: number) {
-    this.prisma.ordemServico.delete({
+    return this.prisma.ordemServico.delete({
       where : { id: id },
     })
   }

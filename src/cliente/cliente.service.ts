@@ -42,8 +42,17 @@ export class ClienteService {
   }
 
   remove(id: number) {
-    this.prisma.cliente.delete({
-      where : { id: id },
+    return this.prisma.cliente.delete({
+      where: {id : id}
+    })
+  }
+
+  login(email: string, senha: string){
+    return this.prisma.cliente.findUnique({
+      where: {
+        email: email,
+        senha: senha
+      }
     })
   }
 }

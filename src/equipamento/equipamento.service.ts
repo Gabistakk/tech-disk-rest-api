@@ -32,7 +32,7 @@ export class EquipamentoService {
   }
 
   remove(id: number) {
-    this.prisma.equipamento.delete({
+    return this.prisma.equipamento.delete({
       where : { id: id },
     })
   }

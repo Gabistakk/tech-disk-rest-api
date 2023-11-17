@@ -39,7 +39,7 @@ export class EmpregadoService {
   }
 
   remove(id: number) {
-    this.prisma.empregado.delete({
+    return this.prisma.empregado.delete({
       where : { id: id },
     })
   }

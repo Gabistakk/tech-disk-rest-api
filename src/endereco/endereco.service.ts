@@ -42,7 +42,7 @@ export class EnderecoService {
   }
 
   remove(id: number) {
-    this.prisma.endereco.delete({
+    return this.prisma.endereco.delete({
       where : { id: id },
     })
   }

@@ -13,6 +13,11 @@ export class ClienteController {
     return this.clienteService.create(createClienteDto);
   }
 
+  @Post('login')
+  login(@Body('email') email: string, @Body('senha') senha: string){
+    return this.clienteService.login(email, senha);
+  }
+
   @Get()
   findAll() {
     return this.clienteService.findAll();
@@ -32,4 +37,6 @@ export class ClienteController {
   remove(@Param('id') id: string) {
     return this.clienteService.remove(+id);
   }
+
+
 }
