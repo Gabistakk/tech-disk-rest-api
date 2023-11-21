@@ -6,10 +6,11 @@ import { EquipamentoModule } from './equipamento/equipamento.module';
 import { EmpregadoModule } from './empregado/empregado.module';
 import { OrdemServicoModule } from './ordem-servico/ordem-servico.module';
 import { CommonModule } from './common/common.module';
+import { LoginModule } from './login/login.module';
 
 
 @Module({
-  imports: [ClienteModule, EnderecoModule, ServicoModule, EquipamentoModule, EmpregadoModule, OrdemServicoModule, CommonModule],
+  imports: [ClienteModule, EnderecoModule, ServicoModule, EquipamentoModule, EmpregadoModule, OrdemServicoModule, CommonModule, LoginModule],
   controllers: [],
   providers: [],
 })

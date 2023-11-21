@@ -68,6 +68,8 @@ model Equipamento{
 model Empregado{
   id                    Int   @id @default(autoincrement())
   nome                  String
+  email                 String @unique
+  senha                 String
   disponibilidade       String
   especialidade         String
   endereco              Endereco? @relation(fields: [enderecoId], references: [id])
