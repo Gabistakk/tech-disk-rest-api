@@ -15,12 +15,19 @@ export class ServicoService {
   }
 
   findAll() {
-    return this.prisma.servico.findMany();
+    return this.prisma.servico.findMany({
+      include: {
+        empregado: {}
+      }
+    });
   }
 
   findOne(id: number) {
     return this.prisma.servico.findUnique({
       where : { id: id },
+      include: {
+        empregado: {}
+      }
     })
   }
 
