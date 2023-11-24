@@ -43,4 +43,10 @@ export class ServicoService {
       where : { id: id },
     })
   }
+
+  findByEmpregadoId(funcId: number){
+    return this.prisma.servico.findMany({
+      where: {empregadoId: funcId}
+    })
+  }
 }

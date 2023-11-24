@@ -17,6 +17,11 @@ export class ServicoController {
     return this.servicoService.findAll();
   }
 
+  @Get('/empregado')
+  findByEmpregadoId(@Body('id') id: number){
+    return this.servicoService.findByEmpregadoId(id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.servicoService.findOne(+id);

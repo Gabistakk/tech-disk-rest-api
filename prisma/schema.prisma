@@ -21,6 +21,7 @@ model Cliente{
   atualizadoEm          DateTime @updatedAt
   endereco              Endereco? @relation(fields: [enderecoId], references: [id])
   enderecoId            Int?
+  ordemServico          OrdemServico[]
 }
 
 model Endereco{
@@ -61,8 +62,9 @@ model Servico{
   objetivo              String
   criadoEm              DateTime @default(now())
   atualizadoEm          DateTime @updatedAt
-  empregadoId           Int
   empregado             Empregado? @relation(fields: [empregadoId], references: [id])
+  empregadoId           Int?
+  ordemServico          OrdemServico[]
 }
 
 model Empregado{
@@ -74,16 +76,19 @@ model Empregado{
   especialidade         String
   endereco              Endereco? @relation(fields: [enderecoId], references: [id])
   enderecoId            Int?
-  servicos              Servico[] 
+  servicos              Servico[]
+  OrdemServico          OrdemServico[]
 }
 
 model OrdemServico{
   id                    Int   @id @default(autoincrement())
-  assinaturas           Int
-  descricao             String
-  orcamentos            String
-  condicoes             String
-  observacoesAdicionais String
   criadoEm              DateTime @default(now())
   atualizadoEm          DateTime @updatedAt
+  clienteId             Int
+  cliente               Cliente?  @relation(fields: [clienteId], references: [id])
+  empregado             Empregado?  @relation(fields: [empregadoId], references: [id])
+  empregadoId           Int
+  servico               Servico?    @relation(fields: [servicoId], references: [id])
+  servicoId             Int
+  data                  String 
 }
