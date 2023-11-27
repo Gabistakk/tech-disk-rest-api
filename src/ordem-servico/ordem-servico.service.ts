@@ -15,7 +15,17 @@ export class OrdemServicoService {
   }
 
   findAll() {
-    return this.prisma.ordemServico.findMany();
+    return this.prisma.ordemServico.findMany({
+      include :{
+        cliente: {
+          include : {
+            endereco: {}
+          }
+        },
+        servico: {},
+        empregado: {}
+      }
+    });
   }
 
   findOne(id: number) {
